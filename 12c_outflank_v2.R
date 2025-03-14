@@ -1,7 +1,6 @@
-
 ######################################################
 ##outflank analyses using dartR
-#identifies outliers in atl & med and just atl pops using outflank 
+#identifies outliers in Atl & Med and just Atl pops using outflank 
 
 
 #Martin Taylor (martin.taylor@uea.ac.uk)
@@ -14,9 +13,9 @@ library(qvalue)
 library(dartR)
 
 #import file for atlantic pops (excludes portugal S)
-outflank_atl <- gl.load("data/outflank/spawning_incl_glport") 
+outflank_atl <- gl.load("data/outflank/spawning_incl_glport.gl") 
 #med
-outflank_med <- gl.load("data/outflank/spawning_incl_med") 
+outflank_med <- gl.load("data/outflank/spawning_incl_med.gl") 
 
 #check dartR compliance
 outflank_med<-gl.compliance.check(outflank_med)

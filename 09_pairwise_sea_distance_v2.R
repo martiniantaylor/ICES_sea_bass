@@ -4,13 +4,9 @@
 #needs file of lat lons and pops
 #relies on marine distance function by jorgeassis
 #
-# Source the main function 
-
-#mit-the shp file needs to be with the dbf and shx files
+#note-the shp file needs to be with the dbf and shx files
 #download the shape files from here 
 #(https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/)
-#
-#
 #
 #
 #Martin Taylor (martin.taylor@uea.ac.uk)

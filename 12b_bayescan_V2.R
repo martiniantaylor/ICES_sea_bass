@@ -1,16 +1,10 @@
-# BayeScan Outlier Detection for Atlantic & Mediterranean Sea Bass Populations
-# -----------------------------------------------------------------------------
+########################################################################
+# BayeScan Outlier Detection 
+
 # This script runs BayeScan for outlier detection using SNP data from two datasets:
 # - Atlantic spawning populations (including Portugal N)
 # - Mediterranean populations
 #
-# The workflow includes:
-# 1. Data preparation
-# 2. BayeScan format conversion
-# 3. Running BayeScan externally (command-line execution)
-# 4. Convergence diagnostics
-# 5. Outlier analysis & visualization
-
 #Martin Taylor (martin.taylor@uea.ac.uk)
 ######################################################
 
@@ -24,8 +18,8 @@ library(ggplot2)   # Data visualization
 # 1. Load SNP Data
 # -----------------------------------------------------------------------------
 # Load genlight objects for Atlantic and Mediterranean populations
-for_bayescan_atl <- readRDS("data/outflank/spawning_incl_glport")
-for_bayescan_med <- readRDS("data/outflank/spawning_incl_med")
+for_bayescan_atl <- gl.load("data/outflank/spawning_incl_glport.gl")
+for_bayescan_med <- gl.load("data/outflank/spawning_incl_med.gl")
 
 # Check populations
 print(levels(for_bayescan_atl$pop))

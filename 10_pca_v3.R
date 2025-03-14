@@ -1,4 +1,11 @@
-# PCA Analysis for Figure 5
+######################################################
+#PCA Analysis script 
+#Figure 5 in sea bass manuscript
+#This will make PCA plots for both atlantic only
+#spawning data incl Portugal and Med pops
+
+#Martin Taylor (martin.taylor@uea.ac.uk)
+######################################################
 
 # Load necessary libraries
 library(ggplot2)
@@ -7,7 +14,7 @@ library(adegenet)
 library(dartR)
 
 # Load spawning data for PCA (including Atlantic, Mediterranean, and Portugal)
-pca_data <- gl.load("data/spawning_reduced_incl_portN_portS_med")
+pca_data <- gl.load("data/spawning_incl_med.gl")
 
 # Perform PCA with 20 factors
 pca_med <- glPca(pca_data, nf = 20)
@@ -18,6 +25,7 @@ variance_explained <- function(index) {
   formatC((pca_med$eig[index] / eig_total_med) * 100, format = "f", digits = 2)
 }
 
+#get PC variance
 PC1_variance <- variance_explained(1)
 PC2_variance <- variance_explained(2)
 
@@ -28,7 +36,6 @@ pca_scores$ices_rect <- pop(pca_data)
 # Load ICES area data
 ices_tab <- read.csv("data/ices_area_rectangle.csv", sep = ",")
 colnames(ices_tab) <- c("ices_rect", "ices_area")
-
 
 # Merge PCA scores with ICES area information
 pca_med_combined <- left_join(pca_scores, ices_tab, by = "ices_rect")

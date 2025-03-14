@@ -1,10 +1,16 @@
-#checked and ready for pub
-#######Mantel tests of feeding and spawning samples#######
+######################################################
+#Mantel tests of feeding and spawning samples
+#This script performs mantel tests on feeding and spawning fst
+#and geographic distance and makes ggplot outputs
+
+#Martin Taylor (martin.taylor@uea.ac.uk)
+######################################################
 
 # Load libraries
 library(ade4)      # For mantel.rtest
 library(ggplot2)   # For plotting
 library(reshape2)  # For reshaping data
+library(ggpmisc)   # For adding equation to plots
 
 # Read Fst matrices - generated and saved in fst pairwise script,
 Fst_matrix_spawn <- as.dist(read.delim("data/reordered_matrix_spawn.txt", header = TRUE, sep=" "))
@@ -43,11 +49,11 @@ prepare_plot_data <- function(dist_matrix, fst_matrix) {
 feeding_data <- prepare_plot_data(dist_feed_log, Fst_matrix_feed)
 spawning_data <- prepare_plot_data(dist_spawn_log, Fst_matrix_spawn)
 
-
 #ggplot for feeding data
 feeding_plot<-ggplot(feeding_data, aes(x = dist, y = fst2)) + 
   geom_point() +
   stat_smooth(method = "lm", col = "black", se = FALSE, linetype = "dashed")+
+  stat_poly_eq(use_label(c("eq", "R2"))) +
   ggtitle(expression(atop("F"[ST]~"vs log sea distance feeding pops")))+
   labs( x = "log sea distance (km)", y = "Fst/1-Fst")+
   theme_bw()
@@ -63,11 +69,26 @@ dev.off()
 spawning_plot<-ggplot(spawning_data, aes(x = dist, y = fst2)) + 
   geom_point() +
   stat_smooth(method = "lm", col = "black", se = FALSE, linetype = "dashed")+
+  stat_poly_eq(use_label(c("eq", "R2"))) +
   ggtitle(expression(atop("F"[ST]~"vs log sea distance spawning pops")))+
   labs( x = "log Sea distance (km)", y = "Fst/1-Fst")+
   theme_bw()
+
 
 pdf(file="output/fst_analysis/genetic_distance_geographic_dist_atl_spawning.pdf",width = 8, # The width of the plot in inches
     height = 4) # The height of the plot in inches)))
 spawning_plot
 dev.off()
+
+#get the equation of the line for spawning with lm 
+#need to use as.vector due to some weirdness with the hidden dimensionality of the df
+spawn.lm <- lm(as.vector(fst2) ~ as.vector(dist), data=spawning_data)
+summary(spawn.lm)
+cc_spawn <- spawn.lm$coefficients
+(eqn <- paste("Y =", paste(round(cc_spawn[1],4), paste(round(cc_spawn[-1],4), names(cc_spawn[-1]), sep=" * ", collapse=" + "), sep=" + "), "+ e"))
+
+#get the equation of the line for feeding with lm 
+feed.lm <- lm(as.vector(fst2) ~ as.vector(dist), data=feeding_data)
+summary(feed.lm)
+cc_feed <- feed.lm$coefficients
+(eqn <- paste("Y =", paste(round(cc_feed[1],4), paste(round(cc_feed[-1],4), names(cc_feed[-1]), sep=" * ", collapse=" + "), sep=" + "), "+ e"))

@@ -26,7 +26,7 @@ bass_all_excl_med <- gl.drop.pop(bass_all_incl_med, pop.list=c("sp_Catalonia","s
 levels(bass_all_excl_med$pop)
 
 #use dartR to make fst matrix. 1000 bootstraps
-bass_all_excl_med_fst<-gl.fst.pop(bass_all_excl_med, nboots=1000)
+bass_all_excl_med_fst<-gl.fst.pop(bass_all_excl_med, nboots=10000)
 
 #extract pairwise fsts
 fst_pairwise_all_pops<-bass_all_excl_med_fst$Fsts

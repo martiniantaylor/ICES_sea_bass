@@ -2,7 +2,7 @@
 # Combining SNPs Identified by Outflank, Bayescan, and PCAadapt
 # 
 # This script loads SNPs identified as outliers from three different selection 
-# detection methods (Outflank, Bayescan, and PCAadapt), merges them into a 
+# detection methods (Outflank, Bayescan, and pcadapt), merges them into a 
 # single list, and finds SNPs common across all methods.
 #
 # Author: Martin Taylor (martin.taylor@uea.ac.uk)
@@ -31,7 +31,7 @@ pcaadapt_outliers_vec <- pcaadapt_outliers$loc.names  # Extract SNP names
 # 2. Load the Full Dataset (for extracting selected SNPs later)
 # ------------------------------------------------------------------------------
 
-for_outliers_atl_med.gl <- gl.load("data/outflank/spawning_incl_med") 
+for_outliers_atl_med.gl <- gl.load("data/outflank/spawning_incl_med.gl") 
 
 # ------------------------------------------------------------------------------
 # 3. Merge All Outlier SNPs from Different Methods

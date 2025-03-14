@@ -1,11 +1,10 @@
-
 ################################################################################
 # Making Maps script
 # 
 # This script loads lat lons and ices rectangles for feeding spawning and southern samples.
-#It produces a feeding map and spawning map with inlay of southern samples.
-
-#It also makes the supp info Sample tables
+# It produces a feeding map and spawning map with inlay of southern samples.
+#
+# 
 #
 # Author: Martin Taylor (martin.taylor@uea.ac.uk)
 ################################################################################

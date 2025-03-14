@@ -1,17 +1,26 @@
-####get bootstrapped overall FST using finepop2 package
+######################################################
+#Script to get bootstrapped overall FST using Finepop2 
+#package 
+#
+#overall fst incl. and excl MED
+#
+#
+#Martin Taylor (martin.taylor@uea.ac.uk)
+######################################################
 
-source("scripts/jenkins_genepop_func.R")
-source("scripts/01_load_libraries_v1.R")
-#this finepoptest script was modified by mit to change  "\b" into "\n" on line 16
-#otherwise it doesn't work!
-source("scripts/finepoptest.R")
+#required external script
+source("scripts/jenkins_genepop_func.R") # https://github.com/Tom-Jenkins/utility_scripts/tree/master
+
+#Load required libraries
+library(Finepop2)
+library(dartR)
 
 #get data files
 #spawning gl - 41022 loci, 286 indivs
-bass_reduced_ices_spawning<-gl.load("data/bass_reduced_ices_spawning")
+bass_reduced_ices_spawning<-gl.load("data/bass_reduced_ices_spawning.gl")
 
 #import feeding data set gl - 41022 loci, 558 indivs
-bass_reduced_ices_feeding<-gl.load("data/bass_reduced_ices_feeding")
+bass_reduced_ices_feeding<-gl.load("data/bass_reduced_ices_feeding.gl")
 
 #sort genlight object to get all pops together
 bass_reduced_ices_spawning_sort<-gl.sort(bass_reduced_ices_spawning, sort.by = "pop", verbose = NULL)

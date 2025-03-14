@@ -1,9 +1,9 @@
 ################################################################################
 # Admixture / distance plots for snps  Identified by Outflank, Bayescan, 
-# and PCAadapt
+# and pcadapt
 # 
 # This script loads SNPs identified as outliers from three different selection 
-# detection methods (Outflank, Bayescan, and PCAadapt), runs LEA for med ancestry
+# detection methods (Outflank, Bayescan, and pcadapt), runs LEA for med ancestry
 # and plots ancestry vs geographic distance from med.
 
 # Author: Martin Taylor (martin.taylor@uea.ac.uk)

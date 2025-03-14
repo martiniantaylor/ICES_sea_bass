@@ -1,6 +1,6 @@
 ######################################################
 ## PCAadapt Outlier identification on spawning pops
-#saves pca dapt identified outliers as new genlight file
+#saves pcadapt identified outliers as new genlight file
 
 
 #Martin Taylor (martin.taylor@uea.ac.uk)
@@ -14,7 +14,7 @@ library(dplyr)       # Data manipulation
 
 
 #including med - this is 41022 locus data set incl portN and MED
-pca_adapt_med <- readRDS("data/outflank/spawning_incl_med") 
+pca_adapt_med <- gl.load("data/outflank/spawning_incl_med.gl") 
 
 #check pops
 pca_adapt_med$pop

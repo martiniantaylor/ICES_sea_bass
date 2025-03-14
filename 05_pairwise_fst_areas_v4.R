@@ -1,5 +1,14 @@
-##script for pairwise fst calculation and associated heatmaps
-##see earlier V3 of script for pairwise fst incl. MED /Portugal
+######################################################
+#Script to get pairwise FST for spawing and feeding pops 
+#
+#heatmaps for ices rectangles and ices areas
+#
+#compares fst in spawning and feeding ices rectangles using lmperm test
+#
+#boxplot of fst values in feeding/spawning
+#
+#Martin Taylor (martin.taylor@uea.ac.uk)
+######################################################
 
 # Load necessary libraries
 library(dartR)
@@ -8,11 +17,12 @@ library(ggplot2)
 library(ggtext)
 library(lmPerm)
 library(dplyr)
+library(ggpubr)
 
 
 #import data file
 #spawning gl - 41022 loci, 286 indivs
-bass_reduced_ices_spawning<-gl.load("data/bass_reduced_ices_spawning")
+bass_reduced_ices_spawning<-gl.load("data/bass_reduced_ices_spawning.gl")
 
 #should be atlantic pops only - no MED or port
 bass_reduced_ices_spawning$pop
@@ -115,7 +125,7 @@ fst_spawning<-ggplot(data = fst.mat_test_sp, aes(x = X2, y = X1, fill = value))+
 ####for feeding populations
 
 #import feeding data set gl - 41022 loci, 558 indivs
-bass_reduced_ices_feeding<-gl.load("data/bass_reduced_ices_feeding")
+bass_reduced_ices_feeding<-gl.load("data/bass_reduced_ices_feeding.gl")
 
 
 bass_reduced_ices_feeding$pop
@@ -178,6 +188,17 @@ for (i in 1:n) {
 #save matrix to file for later on
 write.table(reordered_matrix_feed_pvals, file="data/reordered_matrix_feed_pval.txt", row.names=TRUE, col.names=TRUE)
 
+# Read Fst matrices - generated and saved in fst pairwise script,
+Fst_matrix_spawn <- as.dist(read.delim("data/reordered_matrix_spawn.txt", header = TRUE, sep=" "))
+Fst_matrix_feed <- as.dist(read.delim("data/reordered_matrix_feed_fst.txt", header = TRUE, sep=" "))
+
+reordered_matrix_spawn <- read.delim("data/reordered_matrix_spawn.txt", header = TRUE, sep=" ")
+reordered_matrix_feed <- read.delim("data/reordered_matrix_feed_fst.txt", header = TRUE, sep=" ")
+
+#convert to data frame- can use melt or cor_gather
+fst.mat_test_sp<-reshape::melt(reordered_matrix_spawn)
+str(fst.mat_test_sp)
+fst.mat_test_sp$value<-as.numeric(fst.mat_test_sp$value)
 
 #convert to data frame- can use melt or cor_gather
 fst.mat_test_f<-reshape::melt(reordered_matrix_feed)
@@ -239,20 +260,6 @@ fst_nonas<-test_fst[complete.cases(test_fst), ]
 
 fst_nonas$group<-as.factor(fst_nonas$group)
 
-#box plot of outputs
-perm_test<-ggplot(fst_nonas, aes(x=group, y=value))+
-  geom_boxplot()+
-  geom_dotplot(binaxis = "y", stackdir = "center", dotsize = 0.3)+
-  ggtitle(expression(atop("Pairwise FST feeding samples vs Spawning samples")))+
-  labs( x = "Season", y = "Pairwise FST") +
-  theme_bw()
-
-
-pdf(file="output/fst_analysis/fst_boxplot.pdf")
-perm_test
-dev.off()
-
-
 #permutation test using lmperm
 library(lmPerm)
 summary(lmp(value~group,data=fst_nonas))
@@ -275,6 +282,34 @@ summary(lmp(value~group,data=fst_nonas))
 #Residual standard error: 0.0003359 on 293 degrees of freedom
 #Multiple R-Squared: 0.0199,	Adjusted R-squared: 0.01655 
 #F-statistic: 5.949 on 1 and 293 DF,  p-value: 0.01532 
+
+
+stat.test <- tibble::tribble(
+  ~group1, ~group2, ~p.adj, ~p.signif,~text,
+  "feeding", "spawning", 0.01532, "*","Permutation test: p=0.0152"
+)
+
+
+
+
+#box plot of outputs
+perm_test<-ggplot(fst_nonas, aes(x=group, y=value))+
+  geom_boxplot()+
+  geom_dotplot(binaxis = "y", stackdir = "center", dotsize = 0.3)+
+  ggtitle(expression(atop("Pairwise FST feeding samples vs Spawning samples")))+
+  labs( x = "Season", y = "Pairwise FST") +
+  stat_pvalue_manual(
+    stat.test,
+    y.position = 0.0021,
+    label = "p.signif")+
+  theme_bw()
+
+
+pdf(file="output/fst_analysis/fst_boxplot.pdf")
+perm_test
+dev.off()
+
+
 
 
 

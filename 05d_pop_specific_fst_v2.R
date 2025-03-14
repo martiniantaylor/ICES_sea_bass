@@ -12,29 +12,27 @@ library(FinePop2)
 library(dartR)
 
 #these are required scripts
-source("scripts/jenkins_genepop_func.R")
-#This is modified to make it work with generated genepop files. The way markers are counted is modified.
-source("scripts/finepoptest.R")
+source("scripts/jenkins_genepop_func.R") #https://github.com/Tom-Jenkins/utility_scripts/tree/master
 
 #import saved spawning + MED file  - 41022 loci 343 individuals
-bass_reduced_ices_area_spawning_MED<-gl.load("data/spawning_incl_med.gl")
+bass_spawning_MED<-gl.load("data/spawning_incl_med.gl")
 
 #import feeding data set gl - 41022 loci, 558 indivs
-bass_reduced_ices_feeding<-gl.load("data/bass_reduced_ices_feeding")
+bass_feeding<-gl.load("data/bass_reduced_ices_feeding.gl")
 
 #look at pop order in genlight
-levels(bass_reduced_ices_area_spawning_MED$pop)
-levels(bass_reduced_ices_feeding$pop)
+levels(bass_spawning_MED$pop)
+levels(bass_feeding$pop)
 
 #sort genlight objects by population
-bass_reduced_ices_area_spawning_MED_sort<-gl.sort(bass_reduced_ices_area_spawning_MED, sort.by = "pop", verbose = NULL)
-bass_reduced_ices_feeding_sort<-gl.sort(bass_reduced_ices_feeding_sort, sort.by = "pop", verbose = NULL)
+bass_spawning_MED_sort<-gl.sort(bass_spawning_MED, sort.by = "pop", verbose = NULL)
+bass_feeding_sort<-gl.sort(bass_feeding_sort, sort.by = "pop", verbose = NULL)
 
 #rename pops as _sp and _fe to allow separation later on into feeding and spawning
-names_spawn <- data.frame(pop = unique(bass_reduced_ices_area_spawning_MED_sort$pop)) %>%
+names_spawn <- data.frame(pop = unique(bass_spawning_MED_sort$pop)) %>%
   mutate(new = paste("sp", pop, sep = "_"))
 
-names_feed <- data.frame(pop = unique(bass_reduced_ices_feeding_sort$pop)) %>%
+names_feed <- data.frame(pop = unique(bass_feeding_sort$pop)) %>%
   mutate(new = paste("fe", pop, sep = "_"))
 
 #remove column names
@@ -46,15 +44,15 @@ write.table(names_spawn, file="data/temp_files/recode_pops_spawn_2025.csv", row.
 write.table(names_feed, file="data/temp_files/recode_pops_feed_2025.csv", row.names = F, col.names = F, sep =",")
 
 #rename populations using dartr function
-bass_reduced_ices_area_spawning_MED_sort_rename<-gl.recode.pop(bass_reduced_ices_area_spawning_MED_sort, pop.recode="data/temp_files/recode_pops_spawn_2025.csv", recalc = TRUE, mono.rm = FALSE, verbose = 5)
-bass_reduced_ices_feeding_sort_rename<-gl.recode.pop(bass_reduced_ices_feeding_sort, pop.recode="data/temp_files/recode_pops_feed_2025.csv", recalc = TRUE, mono.rm = FALSE, verbose = 5)
+bass_spawning_MED_sort_rename<-gl.recode.pop(bass_spawning_MED_sort, pop.recode="data/temp_files/recode_pops_spawn_2025.csv", recalc = TRUE, mono.rm = FALSE, verbose = 5)
+bass_feeding_sort_rename<-gl.recode.pop(bass_feeding_sort, pop.recode="data/temp_files/recode_pops_feed_2025.csv", recalc = TRUE, mono.rm = FALSE, verbose = 5)
 
 #check pop levels
-levels(bass_reduced_ices_area_spawning_MED_sort_rename$pop)
-levels(bass_reduced_ices_feeding_sort_rename$pop)
+levels(bass_spawning_MED_sort_rename$pop)
+levels(bass_feeding_sort_rename$pop)
 
 #combine feeding and spawning
-combined_feed_sp<-rbind(bass_reduced_ices_area_spawning_MED_sort_rename, bass_reduced_ices_feeding_sort_rename)
+combined_feed_sp<-rbind(bass_spawning_MED_sort_rename, bass_feeding_sort_rename)
 
 #save file for other scripts
 gl.save(combined_feed_sp, file="data/combined_incl_med.gl", verbose=NULL)
