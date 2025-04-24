@@ -1,5 +1,5 @@
 # ICES_sea_bass
-Scripts from ICES Journal of Marine Science 2025 Sea Bass paper
+Scripts from ICES Journal of Marine Science 2025 Sea Bass paper (Taylor et al. 2025)
 
 ## Script 04_basic_stats_v2.R
 
