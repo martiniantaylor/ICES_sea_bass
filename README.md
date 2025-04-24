@@ -14,7 +14,7 @@ The script requires the following genotype datasets:
 - `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
 - `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format)
 - **ICES area data:**
-- `data/ices_area_rectangle.csv` (Used to categorize populations in ices rectangle format by ICES region)
+- `data/ices_area_rectangle.csv` (Used to group samples in ices rectangle format by ICES region)
 
 
 ### Output
@@ -54,7 +54,7 @@ The script requires the following genotype datasets:
 - `data/bass_reduced_ices_feeding.gl` (feeding populations dataset in genlight format)  
 - `data/spawning_incl_med.gl` (spawning populations including Mediterranean samples)  
 - **ICES area data:**
-- `data/ices_area_rectangle.csv` (mapping of ICES rectangles to areas)  
+- `data/ices_area_rectangle.csv` (Used to group samples in ices rectangle format by ICES region)
 Additionally, it requires the following external scripts:  
 - `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
@@ -76,7 +76,7 @@ The script requires the following input files:
   - `data/spawning_incl_med.gl` (Spawning + Mediterranean populations, 41,022 loci, 343 individuals, genlight format))
   - `data/bass_reduced_ices_feeding.gl` (Feeding dataset, 41,022 loci, 558 individuals, genlight format))
 - **ICES area data:**
-  - `data/ices_area_rectangle.csv` (csv file of icea area/rectangles)
+  - `data/ices_area_rectangle.csv` (Used to group samples in ices rectangle format by ICES region)
 
 Additionally, the script sources a  helper function:
 
