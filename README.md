@@ -50,7 +50,7 @@ The script requires the following input files:
 
 Additionally, the script sources a  helper function:
 
-- `jenkins_genepop_func.R`: Modified for handling generated Genepop files.
+- `jenkins_genepop_func.R`: For handling generated Genepop files.
 
 # Script 06_forceplots of pairwise fst data
 
