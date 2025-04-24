@@ -10,8 +10,8 @@ This script calculates basic genetic diversity statistics - observed heterozygos
 
 The script requires the following input files:
 
-- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals)
-- **Feeding population data:** `data/bass_reduced_ices_feeding` (41022 loci, 558 individuals)
+- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
+- **Feeding population data:** `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format)
 - **ICES area data:** `data/ices_area_rectangle.csv` (Used to categorize populations in ices rectangle format by ICES region)
 
 
@@ -30,8 +30,8 @@ This script performs pairwise F<sub>ST</sub> analysis on genetic data from bass 
 
 The script requires the following input files:
 
-- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals)
-- **Feeding population data:** `data/bass_reduced_ices_feeding` (41022 loci, 558 individuals)
+- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
+- **Feeding population data:** `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format))
 
 ## Output
 
@@ -71,8 +71,8 @@ This script calculates **population-specific FST** values using **FinePop2** and
 The script requires the following input files:
 
 - **Genlight files:**
-  - `data/spawning_incl_med.gl` (Spawning + Mediterranean populations, 41,022 loci, 343 individuals)
-  - `data/bass_reduced_ices_feeding.gl` (Feeding dataset, 41,022 loci, 558 individuals)
+  - `data/spawning_incl_med.gl` (Spawning + Mediterranean populations, 41,022 loci, 343 individuals, genlight format))
+  - `data/bass_reduced_ices_feeding.gl` (Feeding dataset, 41,022 loci, 558 individuals, genlight format))
 - **ICES area data:**
   - `data/ices_area_rectangle.csv` (csv file of icea area/rectangles)
 
@@ -185,7 +185,7 @@ This script generates plots of admixture proportions against geographic distance
 The following files are required to run the script:
 
 1. `output/sea_distances/Contour_spawning_incl_med_18_pops.txt`: Pairwise sea distances matrix.
-2. `data/spawning_incl_med.gl`: Genetic data for spawning and Mediterranean samples.
+2. `data/spawning_incl_med.gl`: Genetic data for spawning and Mediterranean samples, genlight format)
 3. `data/ices_area_rectangle.csv`: CSV file containing the ICES area for each ICES rectangle.
 
 ## Output
