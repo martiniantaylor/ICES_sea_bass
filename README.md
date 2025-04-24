@@ -18,7 +18,9 @@ The script requires the following input files:
 ## Output
 The script generates tables summarizing genetic diversity statistics for spawning and feeding populations. These tables are formatted for inclusion in the manuscript's supplementary materials.
 
-## Script: 05_pairwise_fst_analysis.R
+***
+
+## Script: 05_pairwise_fst_analysis_v4.R
 
 ## Overview
 This R script performs pairwise F<sub>ST</sub> analysis on genetic data from bass populations across ICES rectangles and ICES areas, including independent analysis of spawning and feeding seasons.
