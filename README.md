@@ -307,10 +307,10 @@ The following files are required to run the script:
 
 The script generates the following output files:
 
-1. `data/LEA_input/outlier_snps_all_df.geno`: GENO file for all outliers.
-2. `data/LEA_input/bayescan_snps_df.geno`: GENO file for BayeScan outliers.
-3. `data/LEA_input/outflank_snps_df.geno`: GENO file for OutFLANK outliers.
-4. `data/LEA_input/pcaadapt_snps_df.geno`: GENO file for PCAadapt outliers.
+1. `data/LEA_input/outlier_snps_all_df.geno`: GENO file for all outliers - this is the required format for LEA
+2. `data/LEA_input/bayescan_snps_df.geno`: GENO file for BayeScan outliers - this is the required format for LEA
+3. `data/LEA_input/outflank_snps_df.geno`: GENO file for OutFLANK outliers - this is the required format for LEA
+4. `data/LEA_input/pcaadapt_snps_df.geno`: GENO file for PCAadapt outliers - this is the required format for LEA
 5. `output/admixture/outliers_dist_all.pdf`: Plot of admixture proportions against distance for all outliers.
 6. `output/admixture/outliers_dist_bayes.pdf`: Plot of admixture proportions against distance for BayeScan outliers.
 7. `output/admixture/outliers_dist_outflank.pdf`: Plot of admixture proportions against distance for OutFLANK outliers.
