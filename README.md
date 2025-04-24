@@ -341,5 +341,27 @@ The script generates the following output files:
 2. `output/maps/feeding_map.pdf`: Map of feeding samples.
 3. `output/maps/spawning_map_southern.pdf`: Combined map of spawning samples with southern sample inset.
 
+***
+
+## Script: `robinet_admixture_distance_analysis.R`
+  
+  ### Overview  
+  This script re-analyzes admixture patterns in the Robinet (2000) SNP dataset. It calculates individual missing data rates, visualizes missingness, and plots Mediterranean (MED) ancestry proportions against geographic distance from the SINE location. Analyses are performed both on the full dataset and a filtered subset retaining individuals with ≥95% genotyped loci.
+  
+  ### Required Files
+  - `data/robinet_data/FID_IID_DLAB1012loci_827ind_21reg.gtx` — Genetix format SNP data  
+- `data/robinet_data/noms_827DLAB_ICESNAME_sreg_xy.csv` — Sample metadata  
+- `data/robinet_data/res_admixture_FID_IID_1012loci_761ind_31CLST.csv` — Individual admixture proportions (Q2)  
+- `data/robinet_daat/dist_SINE_long_lat_31reg.csv` — Geographic distances from SINE
+  
+  ### Outputs
+- `histo_robinet_all.pdf` — Histogram of per-individual genotyping completeness  
+- `missingness_robinet_all.pdf` — Plot of missing data vs. MED ancestry  
+- `missingness_robinet_all_filt95.pdf` — Same as above, filtered at ≥95% loci typed  
+- `robinet_all_MED_filt95.pdf` — MED ancestry vs. distance (filtered individuals)  
+- `robinet_all_MED_unfiltered.pdf` — MED ancestry vs. distance (all individuals)
+
+***
+
 
 
