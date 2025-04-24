@@ -25,6 +25,9 @@ The script generates tables summarizing genetic diversity statistics for spawnin
 ## Overview
 This script performs pairwise F<sub>ST</sub> analysis on genetic data from bass populations across ICES rectangles and ICES areas, including independent analysis of spawning and feeding seasons.
 
+
+## Required Files
+
 The script requires the following input files:
 
 - **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals)
@@ -102,7 +105,7 @@ The script generates the following output files:
 ## Overview
 This script performs Mantel tests to assess the correlation between pairwise genetic differentiation (Fst) and pairwise geographic distance for feeding and spawning populations. The results are visualized using scatter plots with linear regression lines.
 
-## Required File Imports
+## Required Files
 The following files must be present for the script to run correctly:
 
 1. **Fst Matrices** (generated and saved in the 05_pairwise_fst script):
