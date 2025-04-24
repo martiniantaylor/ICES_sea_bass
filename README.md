@@ -59,7 +59,7 @@ Additionally, it requires the following external scripts:
 - `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
 ### Output
-Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
+Bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
 
 
 ***
