@@ -343,7 +343,7 @@ The script generates the following output files:
 
 ***
 
-## Script: `robinet_admixture_distance_analysis.R`
+## Script: robinet_missingnes_V3.R
   
 ### Overview  
 This script re-analyzes admixture patterns in the Robinet (2000) SNP dataset. It calculates individual missing data rates, visualizes missingness, and plots Mediterranean (MED) ancestry proportions against geographic distance from the SINE location. Analyses are performed both on the full dataset and a filtered subset retaining individuals with ≥95% genotyped loci.
