@@ -54,7 +54,7 @@ The script requires the following genotype datasets:
 - **ICES area data:**
 - `data/ices_area_rectangle.csv` (mapping of ICES rectangles to areas)  
 Additionally, it requires the following external scripts:  
-- `scripts/jenkins_genepop_func.R` (genepop conversion functions)  
+- `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from https://github.com/Tom-Jenkins/utility_scripts/tree/master
 
 ## Output
 Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
@@ -78,7 +78,7 @@ The script requires the following input files:
 
 Additionally, the script sources a  helper function:
 
-- `jenkins_genepop_func.R`: For handling generated Genepop files.
+- `jenkins_genepop_func.R`: (R function to export a genind object in genepop format) from https://github.com/Tom-Jenkins/utility_scripts/tree/master
 
 ## Output
 Figure 4 in manuscript. Combined plot of feeding and spawning population specific FST
