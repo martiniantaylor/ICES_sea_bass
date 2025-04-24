@@ -132,11 +132,11 @@ The following files must be present for the script to run correctly:
 ## 09_pairwise_sea_distance_v2.R 
 
 ## Overview
-This script calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository.
+This script calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository (https://raw.githubusercontent.com/jorgeassis/marineDistances/master/Script.R).
 
 ## Required Files
 
-The following files are required to run the script:
+The following files are required to run the script: shapefiles from https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/
 
 1. `data/map_shape_files/h/GSHHS_h_L1.shp`: Shapefile for global coastlines.
 2. `data/map_shape_files/h/GSHHS_h_L1.dbf`: Database file for the shapefile.
