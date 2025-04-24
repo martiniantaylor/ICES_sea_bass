@@ -35,6 +35,7 @@ The script requires the following input files:
 Heatmaps of pairwise F<sub>ST</sub> for spawning and feeding samples and across all samples
 Boxplot comparing spawning vs feeding F<sub>ST</sub>
 
+***
 
 ## Script 05c_overall_fst_v2.R
 
@@ -51,7 +52,9 @@ The script requires the following genotype datasets:
 - `data/ices_area_rectangle.csv` (mapping of ICES rectangles to areas)  
 Additionally, it requires the following external scripts:  
 - `scripts/jenkins_genepop_func.R` (genepop conversion functions)  
- 
+
+***
+
 ## Script 05d_pop_specific_fst_v2.R
 
 ## Overview
@@ -69,6 +72,8 @@ The script requires the following input files:
 Additionally, the script sources a  helper function:
 
 - `jenkins_genepop_func.R`: For handling generated Genepop files.
+
+***
 
 # Script 06_forceplots of pairwise fst data
 
@@ -89,6 +94,7 @@ The script generates the following output files:
 1. `output/fst_analysis/test_force_sp.pdf`: Forceplot for spawning samples.
 2. `output/fst_analysis/test_force_fe.pdf`: Forceplot for feeding samples.
 
+***
 
 # Script 08_mantel_tests_v2.R 
 
@@ -109,6 +115,8 @@ The following files must be present for the script to run correctly:
 ## Output
 - Mantel test results printed to the console.
 - Two PDF plots showing the correlation between genetic distance and geographic distance.
+
+***
 
 # 09_pairwise_sea_distance_v2.R 
 
@@ -131,6 +139,7 @@ The script generates the following output files:
 1. `output/sea_distances/Contour_spawning_sites.txt`: Pairwise sea distances for spawning sites.
 2. `output/sea_distances/Contour_feeding_sites.txt`: Pairwise sea distances for feeding sites.
 
+***
 
 # 10_pca_v3.R PCA Analysis for Figure 5
 
@@ -151,6 +160,8 @@ The script generates the following output files:
 1. `output/pca/pca_med_cat.pdf`: PCA plot including Mediterranean populations (Figure 5a).
 2. `output/pca/pca_spawning_atl_ices_area.pdf`: PCA plot for Atlantic populations (Figure 5b).
 
+***
+
 ##script 11_admixture_distance_plot_V3.R 
 
 This project generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
@@ -169,6 +180,7 @@ The script generates the following output files:
 
 1. `output/admixture/spawning_dist_zoom_sept24.pdf`: Plot of admixture proportions against distance.
 
+***
 
 # 12a_pca_adapt_v1.R 
 
@@ -190,6 +202,7 @@ The script generates the following output files:
 1. `output/pca_adapt/sp_outlying_loci_pca_adapt.gl`: Genlight file containing the identified outlier SNPs.
 2. `pcaasapt_outliers_vec`: File containing the names of the outlier loci.
 
+***
 
 # 12b_bayescan_V2.R 
 
@@ -213,6 +226,8 @@ The script generates the following output files:
 2. `output/bayescan/bayescan_sp_med.txt`: BayeScan input file for Mediterranean populations.
 3. `output/bayescan/outlying_loci_bayescan.gl`: Genlight file containing the identified outlier SNPs.
 
+***
+
 # 12c_outflank_v1.R 
 
 This project uses OutFLANK to identify outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs OutFLANK, and visualizes the results.
@@ -232,6 +247,8 @@ The script generates the following output files:
 1. `output/outflank/he_fst_med.pdf`: Plot of He versus Fst for Mediterranean populations.
 2. `output/outflank/he_fst_atl.pdf`: Plot of He versus Fst for Atlantic populations.
 3. `output/pca_adapt/sp_outlying_loci_outflank.gl`: Genlight file containing the identified outlier SNPs.
+
+***
 
 # 12d_combine_outlier_methods_V2.R 
 
@@ -253,6 +270,8 @@ The script generates the following output files:
 
 1. `output/outflank/sp_outlying_loci_all.gl`: Genlight file containing all unique outlier SNPs identified by different methods.
 2. `output/outflank/sp_common_outliers_all_methods.txt`: Text file containing the names of SNPs identified as outliers by all methods.
+
+***
 
 # 13_admixture_outliers_distance_v1.R 
 
@@ -283,6 +302,7 @@ The script generates the following output files:
 8. `output/admixture/outliers_dist_pcaadapt.pdf`: Plot of admixture proportions against distance for PCAadapt outliers.
 9. `output/admixture/model_stats.txt`: Text file containing the model statistics for each set of outliers.
 
+***
 
 # 14_mapping_script_V4.R 
 
