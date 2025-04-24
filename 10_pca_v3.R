@@ -45,7 +45,7 @@ p1 <- ggplot(pca_med_combined, aes(x = PC1, y = PC2, colour = ices_area)) +
   geom_point(size = 2) +
   labs(x = paste0("PC1 (", PC1_variance, "% variance)"),
        y = paste0("PC2 (", PC2_variance, "% variance)")) +
-  stat_ellipse(level = 0.95, size = 1)
+  stat_ellipse(level = 0.95, linewidth = 1)
 
 # Save plot
 pdf("output/pca/pca_med_cat.pdf")
@@ -77,7 +77,7 @@ p2 <- ggplot(pca_atl_combined, aes(x = PC1, y = PC2, colour = ices_area)) +
   geom_point(size = 2) +
   labs(x = paste0("PC1 (", PC1_variance_atl, "% variance)"),
        y = paste0("PC2 (", PC2_variance_atl, "% variance)")) +
-  stat_ellipse(level = 0.95, size = 1)
+  stat_ellipse(level = 0.95, linewidth = 1)
 
 # Save plot
 pdf("output/pca/pca_spawning_atl_ices_area.pdf")
