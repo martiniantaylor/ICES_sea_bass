@@ -160,7 +160,7 @@ This project identifies outliers in spawning populations using PCAadapt and save
 
 The following files are required to run the script:
 
-1. `data/outflank/spawning_incl_med`: genlight file containing the genetic data for spawning populations including Mediterranean samples.
+1. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for spawning populations including Mediterranean samples.
 
 ## Script Description
 
@@ -203,8 +203,8 @@ This project uses OutFLANK to identify outliers in SNP data from Atlantic and Me
 
 The following files are required to run the script:
 
-1. `data/outflank/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations (excluding Portugal S).
-2. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
+1. `data/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations (excluding Portugal S).
+2. `data/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
 
 
 ## Output
@@ -226,7 +226,7 @@ The following files are required to run the script:
 1. `output/bayescan/outlying_loci_bayescan.gl`: Genlight file containing outliers detected by BayeScan.
 2. `output/outflank/sp_outlying_loci_outflank.gl`: Genlight file containing outliers detected by OutFLANK.
 3. `output/pca_adapt/sp_outlying_loci_pca_adapt.gl`: Genlight file containing outliers detected by PCAadapt.
-4. `data/outflank/spawning_incl_medgl.`: Genlight file containing the full genetic dataset for spawning populations including Mediterranean samples.
+4. `data/outflank/spawning_incl_med.gl`: Genlight file containing the full genetic dataset for spawning populations including Mediterranean samples.
 
 
 ## Output
