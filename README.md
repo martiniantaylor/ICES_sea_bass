@@ -153,10 +153,10 @@ The script generates the following output files:
 
 ***
 
-## 10_pca_v3.R PCA Analysis for Figure 5
+## 10_pca_v3.R 
 
 ## Overview
-This script performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components.
+This script performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components for Figure 5 of manuscript.
 
 ## Required Files
 
