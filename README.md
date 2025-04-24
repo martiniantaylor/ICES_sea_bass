@@ -8,11 +8,13 @@ This script calculates basic genetic diversity statistics - observed heterozygos
 
 ### Required Files
 
-The script requires the following input files:
+- **Genlight files:**
+The script requires the following genotype datasets: 
 
-- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
-- **Feeding population data:** `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format)
-- **ICES area data:** `data/ices_area_rectangle.csv` (Used to categorize populations in ices rectangle format by ICES region)
+- `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
+- `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format)
+- **ICES area data:**
+- `data/ices_area_rectangle.csv` (Used to categorize populations in ices rectangle format by ICES region)
 
 
 ### Output
@@ -28,10 +30,10 @@ This script performs pairwise F<sub>ST</sub> analysis on genetic data from bass 
 
 ### Required Files
 
-The script requires the following input files:
-
-- **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
-- **Feeding population data:** `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format))
+- **Genlight files:**
+The script requires the following genotype datasets: 
+-  `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
+-  `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format))
 
 ### Output
 
