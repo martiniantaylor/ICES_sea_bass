@@ -3,10 +3,10 @@ R scripts supporting the analyses in Taylor et al. (2025), ICES Journal of Marin
 
 ## Script: 04_basic_stats_v2.R
 
-## Overview
+### Overview 
 This script calculates basic genetic diversity statistics - observed heterozygosity (Ho), expected heterozygosity (He), and inbreeding coefficient (Fis) for spawning and feeding populations of sea bass. The results are formatted into publication-ready tables using gt.
 
-## Required Files
+### Required Files
 
 The script requires the following input files:
 
@@ -15,25 +15,25 @@ The script requires the following input files:
 - **ICES area data:** `data/ices_area_rectangle.csv` (Used to categorize populations in ices rectangle format by ICES region)
 
 
-## Output
+### Output
 The script generates tables summarizing genetic diversity statistics for spawning and feeding populations. These tables are formatted for inclusion in the manuscript's supplementary materials.
 
 ***
 
 ## Script: 05_pairwise_fst_analysis_v4.R
 
-## Overview
+### Overview 
 This script performs pairwise F<sub>ST</sub> analysis on genetic data from bass populations across ICES rectangles and ICES areas, including independent analysis of spawning and feeding seasons.
 
 
-## Required Files
+### Required Files
 
 The script requires the following input files:
 
 - **Spawning population data:** `data/spawning_incl_med.gl` (41022 loci, 343 individuals, genlight format)
 - **Feeding population data:** `data/bass_reduced_ices_feeding.gl` (41022 loci, 558 individuals, genlight format))
 
-## Output
+### Output
 
 Heatmaps of pairwise F<sub>ST</sub> for spawning and feeding samples and across all samples
 Boxplot comparing spawning vs feeding F<sub>ST</sub>
@@ -42,10 +42,10 @@ Boxplot comparing spawning vs feeding F<sub>ST</sub>
 
 ## Script: 05c_overall_fst_v2.R
 
-## Overview  
+### Overview  
 This script calculates bootstrapped overall *F*<sub>ST</sub> values for European sea bass (*Dicentrarchus labrax*) using the `finepop2` package. The script processes genetic data for spawning and feeding populations in both the Atlantic and Mediterranean. It converts genetic data into the `genepop` format, extracts population names, and computes global *F*<sub>ST</sub> estimates along with standard errors.  
 
-## Required Files 
+### Required Files 
 - **Genlight files:**
 The script requires the following genotype datasets:  
 - `data/bass_reduced_ices_spawning.gl` (spawning populations dataset in genlight format)  
@@ -56,7 +56,7 @@ The script requires the following genotype datasets:
 Additionally, it requires the following external scripts:  
 - `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
-## Output
+### Output
 Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
 
 
@@ -64,10 +64,10 @@ Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various ge
 
 ## Script: 05d_pop_specific_fst_v2.R
 
-## Overview
+### Overview 
 This script calculates **population-specific FST** values using **FinePop2** and generates a combined plot for **feeding and spawning** data, including populations from **Portugal and the Mediterranean**. The results contribute to **Figure 4** in the sea bass manuscript.
 
-## Required Files
+### Required Files
 The script requires the following input files:
 
 - **Genlight files:**
@@ -80,17 +80,17 @@ Additionally, the script sources a  helper function:
 
 - `jenkins_genepop_func.R`: (R function to export a genind object in genepop format) from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
-## Output
+### Output
 Figure 4 in manuscript. Combined plot of feeding and spawning population specific FST
 
 ***
 
 ## Script: 06_forceplots_fst_v3.R
 
-## Overview
+### Overview 
 This script generates forceplots of pairwise Fst data for feeding and spawning samples of sea bass. The script reads in pairwise Fst matrices, processes the data, and outputs the figures to PDF files.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -98,7 +98,7 @@ The following files are required to run the script:
 2. `data/reordered_matrix_feed_fst.txt`: Pairwise Fst matrix for feeding samples.
 3. `data/ices_area_rectangle.csv`: CSV file containing the ices area for each ices rectangle.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -109,10 +109,10 @@ The script generates the following output files:
 
 ## Script: 08_mantel_tests_v2.R 
 
-## Overview
+### Overview 
 This script performs Mantel tests to assess the correlation between pairwise genetic differentiation (Fst) and pairwise geographic distance for feeding and spawning populations. The results are visualized using scatter plots with linear regression lines.
 
-## Required Files
+### Required Files
 The following files must be present for the script to run correctly:
 
 1. **Fst Matrices** (generated and saved in the 05_pairwise_fst script):
@@ -123,7 +123,7 @@ The following files must be present for the script to run correctly:
    - `output/sea_distances/Contour_PairwiseMarineDistances_feeding.txt`
    - `output/sea_distances/Contour_Pairwise_Marine_Distances_spawning.txt`
 
-## Output
+### Output
 - Mantel test results printed to the console.
 - Two PDF plots showing the correlation between genetic distance and geographic distance.
 
@@ -131,10 +131,10 @@ The following files must be present for the script to run correctly:
 
 ## Script: 09_pairwise_sea_distance_v2.R 
 
-## Overview
+### Overview 
 This script calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository (https://raw.githubusercontent.com/jorgeassis/marineDistances/master/Script.R).
 
-## Required Files
+### Required Files
 
 The following files are required to run the script: shapefiles from [NGDC GSHHG dataset](https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/) 
 
@@ -144,7 +144,7 @@ The following files are required to run the script: shapefiles from [NGDC GSHHG 
 4. `data/sea_distance/spawn_sites.csv`: CSV file containing latitude and longitude data for spawning sites.
 5. `data/sea_distance/feed_sites.csv`: CSV file containing latitude and longitude data for feeding sites.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -155,10 +155,10 @@ The script generates the following output files:
 
 ## Script: 10_pca_v3.R 
 
-## Overview
+### Overview 
 This script performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components for Figure 5 of manuscript.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -166,7 +166,7 @@ The following files are required to run the script:
 2. `data/bass_reduced_ices_spawning.gl`: Genlight file containing the genetic data for Atlantic spawning populations.
 3. `data/ices_area_rectangle.csv`: CSV file containing the ICES area for each ICES rectangle.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -177,10 +177,10 @@ The script generates the following output files:
 
 ## Script:  11_admixture_distance_plot_V3.R 
 
-## Overview
+### Overview 
 This script generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -188,7 +188,7 @@ The following files are required to run the script:
 2. `data/spawning_incl_med.gl`: Genetic data for spawning and Mediterranean samples, genlight format)
 3. `data/ices_area_rectangle.csv`: CSV file containing the ICES area for each ICES rectangle.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -198,16 +198,16 @@ The script generates the following output files:
 
 ## Script: 12a_pca_adapt_v1.R 
 
-## Overview
+### Overview 
 This script identifies outliers in spawning populations using PCAadapt and saves the identified outliers as a new genlight file. The script processes genetic data, performs PCA-based adaptation analysis, and identifies statistically significant outliers.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
 1. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for spawning populations including Mediterranean samples.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -218,18 +218,18 @@ The script generates the following output files:
 
 ## Script:  12b_bayescan_V2.R 
 
-## Overview
+### Overview 
 
 This script uses BayeScan to detect outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs BayeScan, performs convergence diagnostics, and visualizes the results.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
 1. `data/outflank/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations including Portugal N.
 2. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -241,18 +241,18 @@ The script generates the following output files:
 
 ## Script: 12c_outflank_v1.R 
 
-## Overview
+### Overview 
 
 This script uses OutFLANK to identify outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs OutFLANK, and visualizes the results.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
 1. `data/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations (excluding Portugal S).
 2. `data/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -264,11 +264,11 @@ The script generates the following output files:
 
 ## Script: 12d_combine_outlier_methods_V2.R 
 
-## Overview
+### Overview 
 
 This script combines SNPs identified as outliers from three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script merges the outliers into a single list and identifies SNPs common across all methods.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -277,7 +277,7 @@ The following files are required to run the script:
 3. `output/pca_adapt/sp_outlying_loci_pca_adapt.gl`: Genlight file containing outliers detected by PCAadapt.
 4. `data/outflank/spawning_incl_med.gl`: Genlight file containing the full genetic dataset for spawning populations including Mediterranean samples.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -288,11 +288,11 @@ The script generates the following output files:
 
 ## Script: 13_admixture_outliers_distance_v1.R 
 
-## Overview
+### Overview 
 
 This script generates admixture proportion plots against geographic distance from the Mediterranean for SNPs identified as outliers by three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script processes the data, runs LEA for Mediterranean ancestry, and plots the results.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -303,7 +303,7 @@ The following files are required to run the script:
 5. `output/sea_distances/Contour_spawning_incl_med_18_pops.txt`: Pairwise sea distances matrix.
 6. `data/ices_area_rectangle.csv`: CSV file containing the ICES area for each ICES rectangle.
 
-## Output
+### Output
 
 The script generates the following output files:
 
@@ -321,11 +321,11 @@ The script generates the following output files:
 
 ## Script:  14_mapping_script_V4.R 
 
-## Overview
+### Overview 
 
 This script generates maps of sea bass feeding and spawning samples, including an inset map of southern samples. The script loads latitude and longitude data for the samples, as well as ICES rectangles, and produces maps with the specified data.
 
-## Required Files
+### Required Files
 
 The following files are required to run the script:
 
@@ -336,7 +336,7 @@ The following files are required to run the script:
 5. `data/map_shape_files/ICES_Areas_20160601_cut_dense_3857.dbf`: Database file for ICES areas shapefile.
 6. `data/map_shape_files/ICES_Areas_20160601_cut_dense_3857.shx`: Index file for ICES areas shapefile.
 
-## Output
+### Output
 
 The script generates the following output files:
 
