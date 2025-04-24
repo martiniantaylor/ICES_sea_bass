@@ -127,7 +127,7 @@ The following files must be present for the script to run correctly:
 
 ### Output
 - Mantel test results printed to the console.
-- Two PDF plots showing the correlation between genetic distance and geographic distance.
+- Two plots showing the correlation between genetic distance and geographic distance for feeding and spawning samples.
 
 ***
 
@@ -309,15 +309,10 @@ The following files are required to run the script:
 
 The script generates the following output files:
 
-1. `data/LEA_input/outlier_snps_all_df.geno`: GENO file for all outliers - this is the required format for LEA
-2. `data/LEA_input/bayescan_snps_df.geno`: GENO file for BayeScan outliers - this is the required format for LEA
-3. `data/LEA_input/outflank_snps_df.geno`: GENO file for OutFLANK outliers - this is the required format for LEA
-4. `data/LEA_input/pcaadapt_snps_df.geno`: GENO file for PCAadapt outliers - this is the required format for LEA
-5. `output/admixture/outliers_dist_all.pdf`: Plot of admixture proportions against distance for all outliers.
-6. `output/admixture/outliers_dist_bayes.pdf`: Plot of admixture proportions against distance for BayeScan outliers.
-7. `output/admixture/outliers_dist_outflank.pdf`: Plot of admixture proportions against distance for OutFLANK outliers.
-8. `output/admixture/outliers_dist_pcaadapt.pdf`: Plot of admixture proportions against distance for PCAadapt outliers.
-9. `output/admixture/model_stats.txt`: Text file containing the model statistics for each set of outliers.
+1. `output/admixture/outliers_dist_all.pdf`: Plot of admixture proportions against distance for all outliers.
+2. `output/admixture/outliers_dist_bayes.pdf`: Plot of admixture proportions against distance for BayeScan outliers.
+3. `output/admixture/outliers_dist_outflank.pdf`: Plot of admixture proportions against distance for OutFLANK outliers.
+4. `output/admixture/outliers_dist_pcaadapt.pdf`: Plot of admixture proportions against distance for PCAadapt outliers.
 
 ***
 
@@ -344,7 +339,7 @@ The script generates the following output files:
 
 1. `output/maps/spawning_map.pdf`: Map of spawning samples.
 2. `output/maps/feeding_map.pdf`: Map of feeding samples.
-3. `output/maps/spawning_map_southern.pdf`: Combined map of spawning samples with southern inset.
+3. `output/maps/spawning_map_southern.pdf`: Combined map of spawning samples with southern sample inset.
 
 
 
