@@ -1,7 +1,7 @@
 # ICES_sea_bass
-Scripts from ICES Journal of Marine Science 2025 Sea Bass paper (Taylor et al. 2025)
+R scripts supporting the analyses in Taylor et al. (2025), ICES Journal of Marine Science, on the population genetics of European sea bass (Dicentrarchus labrax).
 
-## Script 04_basic_stats_v2.R
+## Script: 04_basic_stats_v2.R
 
 ## Overview
 This script calculates basic genetic diversity statistics - observed heterozygosity (Ho), expected heterozygosity (He), and inbreeding coefficient (Fis) for spawning and feeding populations of sea bass. The results are formatted into publication-ready tables using gt.
@@ -40,7 +40,7 @@ Boxplot comparing spawning vs feeding F<sub>ST</sub>
 
 ***
 
-## Script 05c_overall_fst_v2.R
+## Script: 05c_overall_fst_v2.R
 
 ## Overview  
 This script calculates bootstrapped overall *F*<sub>ST</sub> values for European sea bass (*Dicentrarchus labrax*) using the `finepop2` package. The script processes genetic data for spawning and feeding populations in both the Atlantic and Mediterranean. It converts genetic data into the `genepop` format, extracts population names, and computes global *F*<sub>ST</sub> estimates along with standard errors.  
@@ -54,7 +54,7 @@ The script requires the following genotype datasets:
 - **ICES area data:**
 - `data/ices_area_rectangle.csv` (mapping of ICES rectangles to areas)  
 Additionally, it requires the following external scripts:  
-- `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from https://github.com/Tom-Jenkins/utility_scripts/tree/master
+- `scripts/jenkins_genepop_func.R` (R function to export a genind object in genepop format)  from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
 ## Output
 Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
@@ -62,7 +62,7 @@ Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various ge
 
 ***
 
-## Script 05d_pop_specific_fst_v2.R
+## Script: 05d_pop_specific_fst_v2.R
 
 ## Overview
 This script calculates **population-specific FST** values using **FinePop2** and generates a combined plot for **feeding and spawning** data, including populations from **Portugal and the Mediterranean**. The results contribute to **Figure 4** in the sea bass manuscript.
@@ -78,14 +78,14 @@ The script requires the following input files:
 
 Additionally, the script sources a  helper function:
 
-- `jenkins_genepop_func.R`: (R function to export a genind object in genepop format) from https://github.com/Tom-Jenkins/utility_scripts/tree/master
+- `jenkins_genepop_func.R`: (R function to export a genind object in genepop format) from [Tom Jenkins' repo](https://github.com/Tom-Jenkins/utility_scripts/tree/master)
 
 ## Output
 Figure 4 in manuscript. Combined plot of feeding and spawning population specific FST
 
 ***
 
-## Script 06_forceplots_fst_v3.R
+## Script: 06_forceplots_fst_v3.R
 
 ## Overview
 This script generates forceplots of pairwise Fst data for feeding and spawning samples of sea bass. The script reads in pairwise Fst matrices, processes the data, and outputs the figures to PDF files.
@@ -107,7 +107,7 @@ The script generates the following output files:
 
 ***
 
-## Script 08_mantel_tests_v2.R 
+## Script: 08_mantel_tests_v2.R 
 
 ## Overview
 This script performs Mantel tests to assess the correlation between pairwise genetic differentiation (Fst) and pairwise geographic distance for feeding and spawning populations. The results are visualized using scatter plots with linear regression lines.
@@ -129,14 +129,14 @@ The following files must be present for the script to run correctly:
 
 ***
 
-## 09_pairwise_sea_distance_v2.R 
+## Script: 09_pairwise_sea_distance_v2.R 
 
 ## Overview
 This script calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository (https://raw.githubusercontent.com/jorgeassis/marineDistances/master/Script.R).
 
 ## Required Files
 
-The following files are required to run the script: shapefiles from https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/
+The following files are required to run the script: shapefiles from [NGDC GSHHG dataset](https://www.ngdc.noaa.gov/mgg/shorelines/data/gshhg/latest/) 
 
 1. `data/map_shape_files/h/GSHHS_h_L1.shp`: Shapefile for global coastlines.
 2. `data/map_shape_files/h/GSHHS_h_L1.dbf`: Database file for the shapefile.
@@ -153,7 +153,7 @@ The script generates the following output files:
 
 ***
 
-## 10_pca_v3.R 
+## Script: 10_pca_v3.R 
 
 ## Overview
 This script performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components for Figure 5 of manuscript.
@@ -175,7 +175,7 @@ The script generates the following output files:
 
 ***
 
-##  11_admixture_distance_plot_V3.R 
+## Script:  11_admixture_distance_plot_V3.R 
 
 ## Overview
 This script generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
@@ -196,7 +196,7 @@ The script generates the following output files:
 
 ***
 
-## 12a_pca_adapt_v1.R 
+## Script: 12a_pca_adapt_v1.R 
 
 ## Overview
 This script identifies outliers in spawning populations using PCAadapt and saves the identified outliers as a new genlight file. The script processes genetic data, performs PCA-based adaptation analysis, and identifies statistically significant outliers.
@@ -216,7 +216,7 @@ The script generates the following output files:
 
 ***
 
-## 12b_bayescan_V2.R 
+## Script:  12b_bayescan_V2.R 
 
 ## Overview
 
@@ -239,7 +239,7 @@ The script generates the following output files:
 
 ***
 
-## 12c_outflank_v1.R 
+## Script: 12c_outflank_v1.R 
 
 ## Overview
 
@@ -262,7 +262,7 @@ The script generates the following output files:
 
 ***
 
-## 12d_combine_outlier_methods_V2.R 
+## Script: 12d_combine_outlier_methods_V2.R 
 
 ## Overview
 
@@ -286,7 +286,7 @@ The script generates the following output files:
 
 ***
 
-## 13_admixture_outliers_distance_v1.R 
+## Script: 13_admixture_outliers_distance_v1.R 
 
 ## Overview
 
@@ -319,7 +319,7 @@ The script generates the following output files:
 
 ***
 
-## 14_mapping_script_V4.R 
+## Script:  14_mapping_script_V4.R 
 
 ## Overview
 
