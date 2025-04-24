@@ -56,6 +56,10 @@ The script requires the following genotype datasets:
 Additionally, it requires the following external scripts:  
 - `scripts/jenkins_genepop_func.R` (genepop conversion functions)  
 
+## Output
+Bootstrapped overall bootstrapped overall *F*<sub>ST</sub> values for various geographic sample groupings.
+
+
 ***
 
 ## Script 05d_pop_specific_fst_v2.R
@@ -75,6 +79,9 @@ The script requires the following input files:
 Additionally, the script sources a  helper function:
 
 - `jenkins_genepop_func.R`: For handling generated Genepop files.
+
+## Output
+Figure 4 in manuscript. Combined plot of feeding and spawning population specific FST
 
 ***
 
