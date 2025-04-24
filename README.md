@@ -349,6 +349,8 @@ The script generates the following output files:
   This script re-analyzes admixture patterns in the Robinet (2000) SNP dataset. It calculates individual missing data rates, visualizes missingness, and plots Mediterranean (MED) ancestry proportions against geographic distance from the SINE location. Analyses are performed both on the full dataset and a filtered subset retaining individuals with ≥95% genotyped loci.
   
   ### Required Files
+  data files were downloaded from https://zenodo.org/records/3989825
+  
   - `data/robinet_data/FID_IID_DLAB1012loci_827ind_21reg.gtx` — Genetix format SNP data  
 - `data/robinet_data/noms_827DLAB_ICESNAME_sreg_xy.csv` — Sample metadata  
 - `data/robinet_data/res_admixture_FID_IID_1012loci_761ind_31CLST.csv` — Individual admixture proportions (Q2)  
