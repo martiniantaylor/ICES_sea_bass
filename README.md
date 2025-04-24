@@ -23,7 +23,7 @@ The script generates tables summarizing genetic diversity statistics for spawnin
 ## Script: 05_pairwise_fst_analysis_v4.R
 
 ## Overview
-This R script performs pairwise F<sub>ST</sub> analysis on genetic data from bass populations across ICES rectangles and ICES areas, including independent analysis of spawning and feeding seasons.
+This script performs pairwise F<sub>ST</sub> analysis on genetic data from bass populations across ICES rectangles and ICES areas, including independent analysis of spawning and feeding seasons.
 
 The script requires the following input files:
 
@@ -75,9 +75,10 @@ Additionally, the script sources a  helper function:
 
 ***
 
-# Script 06_forceplots of pairwise fst data
+## Script 06_forceplots_fst_v3.R
 
-This project generates forceplots of pairwise Fst data for feeding and spawning samples of sea bass. The script reads in pairwise Fst matrices, processes the data, and outputs the figures to PDF files.
+## Overview
+This script generates forceplots of pairwise Fst data for feeding and spawning samples of sea bass. The script reads in pairwise Fst matrices, processes the data, and outputs the figures to PDF files.
 
 ## Required Files
 
@@ -96,9 +97,9 @@ The script generates the following output files:
 
 ***
 
-# Script 08_mantel_tests_v2.R 
+## Script 08_mantel_tests_v2.R 
 
-## Description
+## Overview
 This script performs Mantel tests to assess the correlation between pairwise genetic differentiation (Fst) and pairwise geographic distance for feeding and spawning populations. The results are visualized using scatter plots with linear regression lines.
 
 ## Required File Imports
@@ -118,9 +119,10 @@ The following files must be present for the script to run correctly:
 
 ***
 
-# 09_pairwise_sea_distance_v2.R 
+## 09_pairwise_sea_distance_v2.R 
 
-This project calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository.
+## Overview
+This script calculates pairwise sea distances between sea bass spawning and feeding sites using a marine distance function. The script relies on shapefiles and a function sourced from Jorge Assis's GitHub repository.
 
 ## Required Files
 
@@ -141,9 +143,10 @@ The script generates the following output files:
 
 ***
 
-# 10_pca_v3.R PCA Analysis for Figure 5
+## 10_pca_v3.R PCA Analysis for Figure 5
 
-This project performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components.
+## Overview
+This script performs Principal Component Analysis (PCA) on sea bass spawning data, including Atlantic, Mediterranean, and Portugal populations. The script generates PCA plots and computes the variance explained by the principal components.
 
 ## Required Files
 
@@ -162,9 +165,10 @@ The script generates the following output files:
 
 ***
 
-##script 11_admixture_distance_plot_V3.R 
+##  11_admixture_distance_plot_V3.R 
 
-This project generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
+## Overview
+This script generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
 
 ## Required Files
 
@@ -182,18 +186,16 @@ The script generates the following output files:
 
 ***
 
-# 12a_pca_adapt_v1.R 
+## 12a_pca_adapt_v1.R 
 
-This project identifies outliers in spawning populations using PCAadapt and saves the identified outliers as a new genlight file. The script processes genetic data, performs PCA-based adaptation analysis, and identifies statistically significant outliers.
+## Overview
+This script identifies outliers in spawning populations using PCAadapt and saves the identified outliers as a new genlight file. The script processes genetic data, performs PCA-based adaptation analysis, and identifies statistically significant outliers.
 
 ## Required Files
 
 The following files are required to run the script:
 
 1. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for spawning populations including Mediterranean samples.
-
-## Script Description
-
 
 ## Output
 
@@ -204,9 +206,11 @@ The script generates the following output files:
 
 ***
 
-# 12b_bayescan_V2.R 
+## 12b_bayescan_V2.R 
 
-This project uses BayeScan to detect outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs BayeScan, performs convergence diagnostics, and visualizes the results.
+## Overview
+
+This script uses BayeScan to detect outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs BayeScan, performs convergence diagnostics, and visualizes the results.
 
 ## Required Files
 
@@ -214,9 +218,6 @@ The following files are required to run the script:
 
 1. `data/outflank/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations including Portugal N.
 2. `data/outflank/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
-
-## Script Description
-
 
 ## Output
 
@@ -228,9 +229,11 @@ The script generates the following output files:
 
 ***
 
-# 12c_outflank_v1.R 
+## 12c_outflank_v1.R 
 
-This project uses OutFLANK to identify outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs OutFLANK, and visualizes the results.
+## Overview
+
+This script uses OutFLANK to identify outliers in SNP data from Atlantic and Mediterranean sea bass populations. The script processes the data, runs OutFLANK, and visualizes the results.
 
 ## Required Files
 
@@ -238,7 +241,6 @@ The following files are required to run the script:
 
 1. `data/spawning_incl_glport.gl`: genlight file containing the genetic data for Atlantic spawning populations (excluding Portugal S).
 2. `data/spawning_incl_med.gl`: genlight file containing the genetic data for Mediterranean populations.
-
 
 ## Output
 
@@ -250,9 +252,11 @@ The script generates the following output files:
 
 ***
 
-# 12d_combine_outlier_methods_V2.R 
+## 12d_combine_outlier_methods_V2.R 
 
-This project combines SNPs identified as outliers from three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script merges the outliers into a single list and identifies SNPs common across all methods.
+## Overview
+
+This script combines SNPs identified as outliers from three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script merges the outliers into a single list and identifies SNPs common across all methods.
 
 ## Required Files
 
@@ -263,7 +267,6 @@ The following files are required to run the script:
 3. `output/pca_adapt/sp_outlying_loci_pca_adapt.gl`: Genlight file containing outliers detected by PCAadapt.
 4. `data/outflank/spawning_incl_med.gl`: Genlight file containing the full genetic dataset for spawning populations including Mediterranean samples.
 
-
 ## Output
 
 The script generates the following output files:
@@ -273,9 +276,11 @@ The script generates the following output files:
 
 ***
 
-# 13_admixture_outliers_distance_v1.R 
+## 13_admixture_outliers_distance_v1.R 
 
-This project generates admixture proportion plots against geographic distance from the Mediterranean for SNPs identified as outliers by three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script processes the data, runs LEA for Mediterranean ancestry, and plots the results.
+## Overview
+
+This script generates admixture proportion plots against geographic distance from the Mediterranean for SNPs identified as outliers by three different selection detection methods (OutFLANK, BayeScan, and PCAadapt). The script processes the data, runs LEA for Mediterranean ancestry, and plots the results.
 
 ## Required Files
 
@@ -304,9 +309,11 @@ The script generates the following output files:
 
 ***
 
-# 14_mapping_script_V4.R 
+## 14_mapping_script_V4.R 
 
-This project generates maps of sea bass feeding and spawning samples, including an inset map of southern samples. The script loads latitude and longitude data for the samples, as well as ICES rectangles, and produces maps with the specified data.
+## Overview
+
+This script generates maps of sea bass feeding and spawning samples, including an inset map of southern samples. The script loads latitude and longitude data for the samples, as well as ICES rectangles, and produces maps with the specified data.
 
 ## Required Files
 
