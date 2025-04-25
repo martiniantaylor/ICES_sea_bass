@@ -194,7 +194,7 @@ The following files are required to run the script:
 
 The script generates the following output files:
 
-1. `output/admixture/spawning_dist_zoom_sept24.pdf`: Plot of admixture proportions against distance.
+1. `output/admixture/spawning_dist_zoom_sept24.pdf`: Plot of admixture proportions against geographic distance from Mediterranean Sea
 
 ***
 
