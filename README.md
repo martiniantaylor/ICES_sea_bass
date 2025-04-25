@@ -351,7 +351,7 @@ This script re-analyzes admixture patterns in the Robinet (2000) SNP dataset. It
 ### Required Files
 Data files were downloaded from https://zenodo.org/records/3989825
   
-  - `data/robinet_data/FID_IID_DLAB1012loci_827ind_21reg.gtx` — Genetix format SNP data  
+- `data/robinet_data/FID_IID_DLAB1012loci_827ind_21reg.gtx` — Genetix format SNP data  
 - `data/robinet_data/noms_827DLAB_ICESNAME_sreg_xy.csv` — Sample metadata  
 - `data/robinet_data/res_admixture_FID_IID_1012loci_761ind_31CLST.csv` — Individual admixture proportions (Q2)  
 - `data/robinet_daat/dist_SINE_long_lat_31reg.csv` — Geographic distances from SINE
@@ -359,9 +359,9 @@ Data files were downloaded from https://zenodo.org/records/3989825
 ### Outputs
 - `histo_robinet_all.pdf` — Histogram of per-individual genotyping completeness  
 - `missingness_robinet_all.pdf` — Plot of missing data vs. MED ancestry  
-- `missingness_robinet_all_filt95.pdf` — Same as above, filtered at ≥95% loci typed  
-- `robinet_all_MED_filt95.pdf` — MED ancestry vs. distance (filtered individuals)  
-- `robinet_all_MED_unfiltered.pdf` — MED ancestry vs. distance (all individuals)
+- `missingness_robinet_all_filt95.pdf` — Plot of missing data vs. MED ancestry, filtered at ≥95% loci typed  
+- `robinet_all_MED_filt95.pdf` — MED ancestry vs. geographic distance from SINE (95% filtered individuals)  
+- `robinet_all_MED_unfiltered.pdf` — MED ancestry vs. geographic distance from SINE (all individuals - original data)
 
 ***
 
