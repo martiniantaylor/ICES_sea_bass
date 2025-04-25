@@ -1,5 +1,5 @@
 # ICES_sea_bass
-R scripts supporting the analyses in Taylor et al. (2025), ICES Journal of Marine Science, on the population genetics of European sea bass (Dicentrarchus labrax).
+R scripts supporting the analyses in Taylor et al. (2025), ICES Journal of Marine Science, on the population genetics of European sea bass (_Dicentrarchus labrax_).
 
 ## Script: 04_basic_stats_v2.R
 
