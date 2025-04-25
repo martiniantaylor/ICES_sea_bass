@@ -37,8 +37,8 @@ The script requires the following genotype datasets:
 
 ### Output
 
-Heatmaps of pairwise F<sub>ST</sub> for spawning and feeding samples and across all samples
-Boxplot comparing spawning vs feeding F<sub>ST</sub>
+- Heatmaps of pairwise F<sub>ST</sub> for spawning and feeding samples and across all samples with p-values
+- Boxplot comparing spawning vs feeding F<sub>ST</sub>
 
 ***
 
