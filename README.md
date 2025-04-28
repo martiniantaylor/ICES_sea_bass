@@ -180,7 +180,7 @@ The script generates the following output files:
 ## Script:  11_admixture_distance_plot_V3.R 
 
 ### Overview 
-This script generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and genetic data, processes the data, and outputs the figures to PDF files.
+This script generates plots of admixture proportions against geographic distance from the Mediterranean for sea bass. The script reads in precomputed pairwise sea distances and individual admixture proportions data, plots admixture proportion vs geographic distance, and outputs the figures to PDF files.
 
 ### Required Files
 
